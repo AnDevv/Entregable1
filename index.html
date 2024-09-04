@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercio Electrónico - Recomendaciones de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #232f3e;
+            color: #ffffff;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        header .search-bar {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        header .search-bar input {
+            width: 70%;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        header .search-bar button {
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            background-color: #febd69;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+
+        header .search-bar button:hover {
+            background-color: #f3a847;
+        }
+
+        nav {
+            background-color: #37475a;
+            color: #ffffff;
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #febd69;
+            transform: scale(1.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+        }
+
+        .section {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1, h2 {
+            color: #232f3e;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .product, .recommendation {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            transition: transform 0.3s ease;
+        }
+
+        .product img, .recommendation img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .product div, .recommendation div {
+            margin-left: 1rem;
+        }
+
+        .product:hover, .recommendation:hover {
+            transform: scale(1.02);
+        }
+
+        .price {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            header .search-bar input {
+                margin-bottom: 0.5rem;
+                width: 100%;
+            }
+
+            header .search-bar button {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Mi Tienda</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+            <button>Buscar</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#recomendaciones">Recomendaciones</a></li>
+            <li><a href="#info">Información</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Productos -->
+        <div class="section" id="productos">
+            <h2>Productos Disponibles</h2>
+            <div class="product">
+                <img src="producto1.jpg" alt="Producto 1">
+                <div>
+                    <h3>Producto 1</h3>
+                    <p>Descripción del Producto 1. Ideal para tus necesidades.</p>
+                    <p class="price">$12.99</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="producto2.jpg" alt="Producto 2">
+                <div>
+                    <h3>Producto 2</h3>
+                    <p>Descripción del Producto 2. Perfecto para cualquier ocasión.</p>
+                    <p class="price">$25.49</p>
+                </div>
+            </div>
+            <!-- Agrega más productos aquí -->
+        </div>
+
+        <!-- Recomendaciones -->
+        <div class="section" id="recomendaciones">
+            <h2>Recomendaciones Personalizadas</h2>
+            <div id="recommendations-list"></div>
+        </div>
+
+        <!-- Información -->
+        <div class="section" id="info">
+            <h2>Información sobre el Sistema de Recomendación</h2>
+            <p>Este sistema utiliza técnicas avanzadas de machine learning para ofrecer recomendaciones personalizadas a los usuarios. A continuación, se detallan las funcionalidades:</p>
+            <ul>
+                <li><strong>Manipulación y análisis de datos:</strong> Usamos pandas para manipular y analizar los datos históricos de ventas y registros de usuarios.</li>
+                <li><strong>Lectura de archivos CSV:</strong> Cargamos y procesamos datos desde archivos CSV utilizando pandas y numpy.</li>
+                <li><strong>Sistema de Recomendación:</strong> Implementamos un sistema de recomendación utilizando el algoritmo Nearest Neighbors para encontrar productos similares basados en las compras del usuario.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para obtener recomendaciones del backend
+        async function obtenerRecomendaciones(usuarioId) {
+            try {
+                const response = await fetch(`/recomendaciones?usuario_id=${usuarioId}`);
+                const data = await response.json();
+                if (response.ok) {
+                    mostrarRecomendaciones(data.productos_recomendados);
+                } else {
+                    console.error(data.error);
+                    document.getElementById('recommendations-list').innerText = 'No se pudieron obtener recomendaciones.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('recommendations-list').innerText = 'Error al obtener recomendaciones.';
+            }
+        }
+
+        // Función para mostrar las recomendaciones en la página
+        function mostrarRecomendaciones(productos) {
+            const lista = document.getElementById('recommendations-list');
+            lista.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
+            productos.forEach(productoId => {
+                // Aquí deberías reemplazar con una lógica para obtener detalles del producto
+                lista.innerHTML += `<div class="recommendation"><img src="recomendado${productoId}.jpg" alt="Recomendado ${productoId}"><div><h3>Recomendado ${productoId}</h3><p>Basado en tus compras anteriores.</p><p class="price">$29.99</p></div></div>`;
+            });
+        }
+
+        // Llamada de ejemplo para usuario_id 1
+        obtenerRecomendaciones(1);
+    </script>
+</body>
+</html>
+
+
+
+
