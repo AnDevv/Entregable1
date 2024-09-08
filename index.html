@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
             color: #333;
@@ -17,41 +17,45 @@
         header {
             background-color: #232f3e;
             color: #ffffff;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         header .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
         header .search-bar {
             display: flex;
             align-items: center;
-            margin-top: 0.5rem;
         }
 
         header .search-bar input {
-            width: 70%;
+            width: 250px;
             padding: 0.5rem;
             border-radius: 4px;
             border: none;
             outline: none;
+            margin-right: 0.5rem;
         }
 
         header .search-bar button {
             padding: 0.5rem 1rem;
-            margin-left: 0.5rem;
             background-color: #febd69;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             color: #333;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
         header .search-bar button:hover {
@@ -114,14 +118,14 @@
         .product, .recommendation {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             padding: 1rem;
             border-bottom: 1px solid #e0e0e0;
             transition: transform 0.3s ease;
         }
 
         .product img, .recommendation img {
-            width: 150px;
+            width: 180px;
             height: auto;
             border-radius: 8px;
             object-fit: cover;
@@ -129,16 +133,17 @@
         }
 
         .product div, .recommendation div {
-            margin-left: 1rem;
+            margin-left: 1.5rem;
         }
 
         .product:hover, .recommendation:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
         .price {
             font-weight: bold;
             color: #d32f2f;
+            font-size: 1.2rem;
         }
 
         footer {
@@ -186,7 +191,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Mi Tienda</div>
+        <div class="logo">NexusShop</div>
         <div class="search-bar">
             <input type="text" placeholder="Buscar productos...">
             <button>Buscar</button>
@@ -208,17 +213,17 @@
             <div class="product">
                 <img src="producto1.jpg" alt="Producto 1">
                 <div>
-                    <h3>Producto 1</h3>
-                    <p>Descripción del Producto 1. Ideal para tus necesidades.</p>
-                    <p class="price">$12.99</p>
+                    <h3>Equipo de juego</h3>
+                    <p>Equipo de juego para gamers.</p>
+                    <p class="price">$1200.99</p>
                 </div>
             </div>
             <div class="product">
                 <img src="producto2.jpg" alt="Producto 2">
                 <div>
-                    <h3>Producto 2</h3>
-                    <p>Descripción del Producto 2. Perfecto para cualquier ocasión.</p>
-                    <p class="price">$25.49</p>
+                    <h3>Computadora Pc GAMER RYZEN </h3>
+                    <p>"Computadora Pc GAMER RYZEN 7 5700G RAM 16GB SSD 480GB</p>
+                    <p class="price">$1250.49</p>
                 </div>
             </div>
             <!-- Agrega más productos aquí -->
@@ -227,7 +232,9 @@
         <!-- Recomendaciones -->
         <div class="section" id="recomendaciones">
             <h2>Recomendaciones Personalizadas</h2>
-            <div id="recommendations-list"></div>
+            <div id="recommendations-list">
+                <!-- Aquí se mostrarán las recomendaciones dinámicamente -->
+            </div>
         </div>
 
         <!-- Información -->
@@ -243,7 +250,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Mi Tienda. Todos los derechos reservados.</p>
+        <p>&copy; 2024 NexusShop. Todos los derechos reservados.</p>
     </footer>
 
     <script>
@@ -268,18 +275,22 @@
         function mostrarRecomendaciones(productos) {
             const lista = document.getElementById('recommendations-list');
             lista.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
-            productos.forEach(productoId => {
-                // Aquí deberías reemplazar con una lógica para obtener detalles del producto
-                lista.innerHTML += `<div class="recommendation"><img src="recomendado${productoId}.jpg" alt="Recomendado ${productoId}"><div><h3>Recomendado ${productoId}</h3><p>Basado en tus compras anteriores.</p><p class="price">$29.99</p></div></div>`;
+            productos.forEach(producto => {
+                lista.innerHTML += `
+                    <div class="recommendation">
+                        <img src="recomendado${producto.id}.jpg" alt="Recomendado ${producto.nombre}">
+                        <div>
+                            <h3>${producto.nombre}</h3>
+                            <p>${producto.descripcion}</p>
+                            <p class="price">$${producto.precio.toFixed(2)}</p>
+                        </div>
+                    </div>
+                `;
             });
         }
 
-        // Llamada de ejemplo para usuario_id 1
-        obtenerRecomendaciones(1);
+        // Ejemplo de llamada a la función con un ID de usuario ficticio
+        obtenerRecomendaciones(123);
     </script>
 </body>
 </html>
-
-
-
-
