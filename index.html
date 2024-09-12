@@ -3,70 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusShop-Recomendaciones de Productos</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TheBear - Recomendaciones de Productos</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">NexusShop</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar productos...">
-            <button><i class="fas fa-search"></i> Buscar</button>
+    <!-- Header -->
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo d-flex align-items-center">
+                <h1 class="ms-2">The Bear</h1>
+            </div>
+            <div class="search-bar d-flex">
+                <input type="text" class="form-control me-2" placeholder="Buscar productos...">
+            </div>
         </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#recomendaciones">Recomendaciones</a></li>
-            <li><a href="#info">Información</a></li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a href="#productos" class="nav-link">Productos</a></li>
+                <li class="nav-item"><a href="#recomendaciones" class="nav-link">Recomendaciones</a></li>
+                <li class="nav-item"><a href="#info" class="nav-link">Información</a></li>
+                <li class="nav-item"><a href="#registro" class="nav-link">Registro</a></li>
+                <li class="nav-item"><a href="#login" class="nav-link">Login</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="container">
-        <div class="section" id="productos">
-            <h2>Productos Disponibles</h2>
-            <div class="product">
-                <img src="producto1.jpg" alt="Producto 1">
-                <div>
-                    <h3>Equipo de juego</h3>
-                    <p>Equipo de juego para gamers.</p>
-                    <p class="price">$1200.99</p>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <h2 class="display-4">Moda y Estilo</h2>
+        <p>Encuentra lo mejor en productos para ti.</p>
+        <a href="#productos" class="btn btn-custom btn-lg">Ver Productos</a>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Productos Disponibles</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="men1.jpg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Outfit Casual</h5>
+                            <p class="card-text">Super oferta de temporada.</p>
+                            <p class="price">$200.99</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="product">
-                <img src="producto2.jpg" alt="Producto 2">
-                <div>
-                    <h3>Computadora Pc GAMER RYZEN</h3>
-                    <p>Computadora Pc GAMER RYZEN 7 5700G RAM 16GB SSD 480GB</p>
-                    <p class="price">$1250.49</p>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="black.jpg" class="card-img-top" alt="Producto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Black Outfit</h5>
+                            <p class="card-text">Modelo old money Black</p>
+                            <p class="price">$250.49</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="men.jpg" class="card-img-top" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Outfit Vintage</h5>
+                            <p class="card-text">Modelo old money Vintage</p>
+                            <p class="price">$250.29</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="section" id="recomendaciones">
-            <h2>Recomendaciones Personalizadas</h2>
-            <div id="recommendations-list">
-                <!-- Aquí se mostrarán las recomendaciones dinámicamente -->
+    <!-- Recomendaciones Section -->
+    <section id="recomendaciones" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Recomendaciones Personalizadas</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="top1.jpg" class="card-img-top" alt="Nueva llegada top">
+                        <div class="card-body">
+                            <h5 class="card-title">Recomendacion Invierno</h5>
+                            <p class="card-text">Nueva llegada de temporada Invierno</p>
+                            <p class="price">$250.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="top3.jpg" class="card-img-top" alt="Nueva llegada top">
+                        <div class="card-body">
+                            <h5 class="card-title">Recomendacion Moda Urbana</h5>
+                            <p class="card-text">Nueva llegada Outfit Urbano</p>
+                            <p class="price">$150.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="hero-background.jpg" class="card-img-top" alt="Nueva llegada top">
+                        <div class="card-body">
+                            <h5 class="card-title">Recomendacion Outfit Urbana</h5>
+                            <p class="card-text">Nueva llegada Outfit Urbano Gris</p>
+                            <p class="price">$100.00</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section" id="info">
-            <h2>Información sobre el Sistema de Recomendación</h2>
-            <p>Este sistema utiliza técnicas avanzadas de machine learning para ofrecer recomendaciones personalizadas a los usuarios. A continuación, se detallan las funcionalidades:</p>
+    <!-- Información Section -->
+    <section id="info" class="py-5 bg-info text-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Información sobre el Sistema de Recomendación</h2>
+            <p>Este sistema utiliza técnicas avanzadas de machine learning para ofrecer recomendaciones personalizadas a los usuarios.</p>
             <ul>
                 <li><strong>Manipulación y análisis de datos:</strong> Usamos pandas para manipular y analizar los datos históricos de ventas y registros de usuarios.</li>
                 <li><strong>Lectura de archivos CSV:</strong> Cargamos y procesamos datos desde archivos CSV utilizando pandas y numpy.</li>
-                <li><strong>Sistema de Recomendación:</strong> Implementamos un sistema de recomendación utilizando el algoritmo Nearest Neighbors para encontrar productos similares basados en las compras del usuario.</li>
+                <li><strong>Sistema de Recomendación:</strong> Implementamos un sistema de recomendación utilizando el algoritmo Nearest Neighbors.</li>
             </ul>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>© 2024 NexusShop. Todos los derechos reservados.</p>
+    <!-- Registro Section -->
+    <section id="registro" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Registro</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="registration-form">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Iniciar Sesión</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="login-form">
+                        <form>
+                            <div class="mb-3">
+                                <label for="login-email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="login-email" placeholder="Ingrese su correo electrónico">
+                            </div>
+                            <div class="mb-3">
+                                <label for="login-password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="login-password" placeholder="Ingrese su contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Iniciar Sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <p>© 2024 TheBear. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
